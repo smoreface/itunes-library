@@ -61,6 +61,26 @@ class TestITunes < Test::Unit::TestCase
     assert_equal "Them Crooked Vultures", library.fetch_track(7944).album
   end
 
+  def test_track_number
+    assert_equal 2, library.fetch_track(7944).number
+  end
+
+  def test_track_genre
+    assert_equal "Rock", library.fetch_track(7944).genre
+  end
+
+  def test_track_year
+    assert_equal 2009, library.fetch_track(7944).year
+  end
+
+  def test_track_composer
+    assert_equal "Them Crooked Vultures", library.fetch_track(7944).composer
+  end
+
+  def test_track_play_date_utc
+    assert_equal DateTime.parse("2010-04-24T13:33:51Z"), library.fetch_track(11068).play_date_utc
+  end
+
   def test_track_play_count
     assert_equal 0, library.fetch_track(7944).play_count
   end

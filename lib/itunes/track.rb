@@ -29,10 +29,30 @@ module ITunes
       self['Album']
     end
 
+    def number
+      self['Track Number']
+    end
+    
+    def genre
+      self['Genre']
+    end
+
+    def year
+      self['Year']
+    end
+
+    def composer
+      self['Composer']
+    end
+
     def date_added
       self['Date Added']
     end
 
+    def play_date_utc
+      self['Play Date UTC']
+    end
+    
     def play_count
       self['Play Count'] || 0
     end
