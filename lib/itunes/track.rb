@@ -49,6 +49,14 @@ module ITunes
       self['Composer']
     end
 
+    def season_number
+      self['Season']
+    end
+
+    def episode_number
+      self['Episode Order']
+    end
+
     def date_added
       self['Date Added']
     end
@@ -79,6 +87,10 @@ module ITunes
 
     def movie?
       self['Movie'] || false
+    end
+
+    def tv_show?
+      self['TV Show'] || false
     end
 
     def podcast?

@@ -8,11 +8,11 @@ class TestITunes < Test::Unit::TestCase
   include ITunes
 
   def test_size
-    assert_equal 111, library.size
+    assert_equal 112, library.size
   end
 
   def test_library_inspect
-    assert_equal "#<ITunes::Library size=111>", library.inspect
+    assert_equal "#<ITunes::Library size=112>", library.inspect
   end
 
   def test_playlists
@@ -124,6 +124,18 @@ class TestITunes < Test::Unit::TestCase
     assert_equal false, track.audio?
     assert_equal true, track.video?
     assert_equal true, track.movie?
+    assert_equal false, track.tv_show?
+    assert_equal false, track.podcast?
+  end
+
+  def test_tv_show_track_kind
+    track = library.fetch_track(11082)
+    assert_equal "Crazy Handful of Nothin", track.name
+    assert_equal "Protected MPEG-4 video file", track.kind
+    assert_equal false, track.audio?
+    assert_equal true, track.video?
+    assert_equal false, track.movie?
+    assert_equal true, track.tv_show?
     assert_equal false, track.podcast?
   end
 
@@ -134,6 +146,7 @@ class TestITunes < Test::Unit::TestCase
     assert_equal true, track.audio?
     assert_equal false, track.video?
     assert_equal false, track.movie?
+    assert_equal false, track.tv_show?
     assert_equal true, track.podcast?
   end
 
@@ -144,6 +157,7 @@ class TestITunes < Test::Unit::TestCase
     assert_equal false, track.audio?
     assert_equal true, track.video?
     assert_equal true, track.movie?
+    assert_equal false, track.tv_show?
     assert_equal true, track.podcast?
   end
 
@@ -154,6 +168,7 @@ class TestITunes < Test::Unit::TestCase
     assert_equal true, track.audio?
     assert_equal false, track.video?
     assert_equal false, track.movie?
+    assert_equal false, track.tv_show?
     assert_equal false, track.podcast?
     assert_equal true, track.audiobook?
   end
@@ -166,6 +181,14 @@ class TestITunes < Test::Unit::TestCase
   def test_movie_played
     assert_equal false, library.fetch_track(11075).played?
     assert_equal true, library.fetch_track(11068).played?
+  end
+  
+  def test_tv_show_season_number
+    assert_equal 1, library.fetch_track(11082).season_number
+  end
+
+  def test_tv_show_episode_number
+    assert_equal 6, library.fetch_track(11082).episode_number
   end
 
   def test_track_inspect

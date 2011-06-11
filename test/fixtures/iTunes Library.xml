@@ -2924,6 +2924,48 @@
 			<key>File Folder Count</key><integer>4</integer>
 			<key>Library Folder Count</key><integer>1</integer>
 		</dict>
+		<key>11082</key>
+		<dict>
+			<key>Track ID</key><integer>11082</integer>
+			<key>Name</key><string>Crazy Handful of Nothin</string>
+			<key>Artist</key><string>Breaking Bad</string>
+			<key>Album Artist</key><string>Breaking Bad</string>
+			<key>Album</key><string>Breaking Bad, Season 1</string>
+			<key>Genre</key><string>Drama</string>
+			<key>Kind</key><string>Protected MPEG-4 video file</string>
+			<key>Size</key><integer>681406112</integer>
+			<key>Total Time</key><integer>2878127</integer>
+			<key>Disc Number</key><integer>1</integer>
+			<key>Disc Count</key><integer>1</integer>
+			<key>Track Number</key><integer>6</integer>
+			<key>Year</key><integer>2008</integer>
+			<key>Date Modified</key><date>2010-05-31T13:13:27Z</date>
+			<key>Date Added</key><date>2010-05-31T12:57:37Z</date>
+			<key>Bit Rate</key><integer>125</integer>
+			<key>Play Count</key><integer>1</integer>
+			<key>Play Date</key><integer>3358144028</integer>
+			<key>Play Date UTC</key><date>2010-05-31T13:47:08Z</date>
+			<key>Release Date</key><date>2008-03-02T08:00:00Z</date>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Series</key><string>Breaking Bad</string>
+			<key>Season</key><integer>1</integer>
+			<key>Episode</key><string>0105</string>
+			<key>Episode Order</key><integer>6</integer>
+			<key>Sort Album</key><string>Breaking Bad, Season 1</string>
+			<key>Persistent ID</key><string>478CDA1075A86313</string>
+			<key>Content Rating</key><string>us-tv|TV-14|500|</string>
+			<key>Track Type</key><string>File</string>
+			<key>Protected</key><true/>
+			<key>Purchased</key><true/>
+			<key>Has Video</key><true/>
+			<key>HD</key><false/>
+			<key>Video Width</key><integer>640</integer>
+			<key>Video Height</key><integer>480</integer>
+			<key>TV Show</key><true/>
+			<key>Location</key><string>file://localhost/iTunes/iTunes%20Media/TV%20Shows/Breaking%20Bad/Season%201/06%20Crazy%20Handful%20of%20Nothin.m4v</string>
+			<key>File Folder Count</key><integer>5</integer>
+			<key>Library Folder Count</key><integer>1</integer>
+		</dict>
 	</dict>
 	<key>Playlists</key>
 	<array>
