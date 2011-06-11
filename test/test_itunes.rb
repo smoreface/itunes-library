@@ -53,6 +53,10 @@ class TestITunes < Test::Unit::TestCase
     assert_equal 7944, library.fetch_track(7944).id
   end
 
+  def test_track_persistent_id
+    assert_equal "E50BD6C381E767DE", library.fetch_track(7944).persistent_id
+  end
+
   def test_track_artist
     assert_equal "Them Crooked Vultures", library.fetch_track(7944).artist
   end

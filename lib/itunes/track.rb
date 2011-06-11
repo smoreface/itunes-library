@@ -17,6 +17,10 @@ module ITunes
       self['Track ID']
     end
 
+    def persistent_id
+      self['Persistent ID']
+    end
+
     def name
       self['Name']
     end
