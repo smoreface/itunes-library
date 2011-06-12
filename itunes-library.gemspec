@@ -1,7 +1,6 @@
 Gem::Specification.new do |s|
   s.name      = 'itunes-library'
   s.version   = '0.1.0'
-  s.date      = '2011-03-24'
 
   s.homepage    = "https://github.com/josh/itunes-library"
   s.summary     = "Wrapper around iTunes Library.xml"
