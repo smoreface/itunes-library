@@ -8,11 +8,11 @@ class TestITunes < Test::Unit::TestCase
   include ITunes
 
   def test_size
-    assert_equal 111, library.size
+    assert_equal 112, library.size
   end
 
   def test_library_inspect
-    assert_equal "#<ITunes::Library size=111>", library.inspect
+    assert_equal "#<ITunes::Library size=112>", library.inspect
   end
 
   def test_playlists
@@ -53,12 +53,37 @@ class TestITunes < Test::Unit::TestCase
     assert_equal 7944, library.fetch_track(7944).id
   end
 
+  def test_track_persistent_id
+    assert_equal "E50BD6C381E767DE", library.fetch_track(7944).persistent_id
+  end
+
   def test_track_artist
     assert_equal "Them Crooked Vultures", library.fetch_track(7944).artist
   end
 
   def test_track_album
     assert_equal "Them Crooked Vultures", library.fetch_track(7944).album
+  end
+
+  def test_track_number
+    assert_equal 2, library.fetch_track(7944).number
+  end
+
+  def test_track_genre
+    assert_equal "Rock", library.fetch_track(7944).genre
+  end
+
+  def test_track_year
+    assert_equal 2009, library.fetch_track(7944).year
+  end
+
+  def test_track_composer
+    assert_equal "Them Crooked Vultures", library.fetch_track(7944).composer
+  end
+
+  def test_track_last_played_at
+    assert_equal "2010-04-24T13:33:51+00:00", library.fetch_track(11068).last_played_at.to_s
+    assert_equal nil, library.fetch_track(7944).last_played_at # unplayed track
   end
 
   def test_track_play_count
@@ -100,6 +125,18 @@ class TestITunes < Test::Unit::TestCase
     assert_equal false, track.audio?
     assert_equal true, track.video?
     assert_equal true, track.movie?
+    assert_equal false, track.tv_show?
+    assert_equal false, track.podcast?
+  end
+
+  def test_tv_show_track_kind
+    track = library.fetch_track(11082)
+    assert_equal "Crazy Handful of Nothin", track.name
+    assert_equal "Protected MPEG-4 video file", track.kind
+    assert_equal false, track.audio?
+    assert_equal true, track.video?
+    assert_equal false, track.movie?
+    assert_equal true, track.tv_show?
     assert_equal false, track.podcast?
   end
 
@@ -110,6 +147,7 @@ class TestITunes < Test::Unit::TestCase
     assert_equal true, track.audio?
     assert_equal false, track.video?
     assert_equal false, track.movie?
+    assert_equal false, track.tv_show?
     assert_equal true, track.podcast?
   end
 
@@ -120,6 +158,7 @@ class TestITunes < Test::Unit::TestCase
     assert_equal false, track.audio?
     assert_equal true, track.video?
     assert_equal true, track.movie?
+    assert_equal false, track.tv_show?
     assert_equal true, track.podcast?
   end
 
@@ -130,6 +169,7 @@ class TestITunes < Test::Unit::TestCase
     assert_equal true, track.audio?
     assert_equal false, track.video?
     assert_equal false, track.movie?
+    assert_equal false, track.tv_show?
     assert_equal false, track.podcast?
     assert_equal true, track.audiobook?
   end
@@ -142,6 +182,14 @@ class TestITunes < Test::Unit::TestCase
   def test_movie_played
     assert_equal false, library.fetch_track(11075).played?
     assert_equal true, library.fetch_track(11068).played?
+  end
+  
+  def test_tv_show_season_number
+    assert_equal 1, library.fetch_track(11082).season_number
+  end
+
+  def test_tv_show_episode_number
+    assert_equal 6, library.fetch_track(11082).episode_number
   end
 
   def test_track_inspect
