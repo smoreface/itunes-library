@@ -61,7 +61,7 @@ module ITunes
       self['Date Added']
     end
 
-    def play_date_utc
+    def last_played_at
       self['Play Date UTC']
     end
     

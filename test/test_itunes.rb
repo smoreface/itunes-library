@@ -81,8 +81,9 @@ class TestITunes < Test::Unit::TestCase
     assert_equal "Them Crooked Vultures", library.fetch_track(7944).composer
   end
 
-  def test_track_play_date_utc
-    assert_equal DateTime.parse("2010-04-24T13:33:51Z"), library.fetch_track(11068).play_date_utc
+  def test_track_last_played_at
+    assert_equal "2010-04-24T13:33:51+00:00", library.fetch_track(11068).last_played_at.to_s
+    assert_equal nil, library.fetch_track(7944).last_played_at # unplayed track
   end
 
   def test_track_play_count
