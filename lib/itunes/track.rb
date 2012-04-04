@@ -77,6 +77,14 @@ module ITunes
       self['Kind']
     end
 
+    def location
+      self['Location']
+    end
+
+    def location_path
+      uri_parser.unescape(location).gsub('file://localhost', '')
+    end
+
     def audio?
       !video?
     end
@@ -111,6 +119,13 @@ module ITunes
 
     def inspect
       "#<#{self.class.name} name=#{name.inspect}>"
+    end
+
+    private
+
+    def uri_parser
+      # choose appropriate URI class for Ruby 1.9/1.8
+      @uri_parser ||= URI.const_defined?(:Parser) ? URI::Parser.new : URI
     end
   end
 end

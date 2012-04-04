@@ -1,4 +1,5 @@
 require 'plist'
+require 'uri'
 
 require 'itunes/playlist'
 require 'itunes/track'
