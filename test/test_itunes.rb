@@ -98,6 +98,16 @@ class TestITunes < Test::Unit::TestCase
     assert_equal "2010-04-24T13:24:25+00:00", library.fetch_track(7944).date_added.to_s
   end
 
+  def test_track_location
+    expected_location = 'file://localhost/iTunes/iTunes%20Media/Music/Coldplay/Viva%20la%20Vida/10%20Death%20and%20All%20His%20Friends.mp3'
+    assert_equal expected_location, library.fetch_track(7405).location
+  end
+
+  def test_track_location_path
+    expected_path = '/iTunes/iTunes Media/Music/Coldplay/Viva la Vida/10 Death and All His Friends.mp3'
+    assert_equal expected_path, library.fetch_track(7405).location_path
+  end
+
   def test_audio_track_total_time
     assert_equal 246, library.fetch_track(7944).total_time
   end
