@@ -77,6 +77,18 @@ module ITunes
       self['Kind']
     end
 
+    def bit_rate
+      self['Bit Rate']
+    end
+    
+    def sample_rate
+      self['Sample Rate']
+    end
+    
+    def artwork_count
+      self['Artwork Count']
+    end
+
     def location
       self['Location']
     end
