@@ -3,6 +3,8 @@ iTunes Library
 
 A Ruby library that makes it easy to dig around your iTunes Library metadata.
 
+Forked because: https://github.com/josh/itunes-library/issues/5
+
 Installation
 ------------
 
