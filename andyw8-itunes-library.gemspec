@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   ]
 
   s.add_dependency 'plist'
+  s.add_development_dependency 'rake'
 
   s.authors = ["Joshua Peek"]
   s.email   = ["josh@joshpeek.com"]
