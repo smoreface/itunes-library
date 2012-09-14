@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
-  s.name      = 'itunes-library'
-  s.version   = '0.1.1'
+  s.name      = 'andyw8-itunes-library'
+  s.version   = '0.1.2'
 
-  s.homepage    = "https://github.com/josh/itunes-library"
+  s.homepage    = "https://github.com/andyw8/itunes-library"
   s.summary     = "Wrapper around iTunes Library.xml"
   s.description = <<-EOS
     A Ruby library that makes it easy to dig around your iTunes Library metadata.
@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'plist'
 
   s.authors = ["Joshua Peek"]
-  s.email   = "josh@joshpeek.com"
+  s.email   = ["josh@joshpeek.com"]
 end
