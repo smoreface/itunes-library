@@ -108,6 +108,10 @@ class TestITunes < Test::Unit::TestCase
     assert_equal expected_path, library.fetch_track(7405).location_path
   end
 
+  def test_track_location_path_is_nil_if_location_not_present
+    assert_nil library.fetch_track(7400).location_path
+  end
+
   def test_bit_rate
     assert_equal 256, library.fetch_track(7949).bit_rate
   end

@@ -94,6 +94,7 @@ module ITunes
     end
 
     def location_path
+      return nil unless location
       uri_parser.unescape(location).gsub('file://localhost', '')
     end
 
