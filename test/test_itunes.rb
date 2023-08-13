@@ -86,6 +86,11 @@ class TestITunes < Test::Unit::TestCase
     assert_equal nil, library.fetch_track(7944).last_played_at # unplayed track
   end
 
+  def test_rating
+    assert_equal nil, library.fetch_track(7944).rating
+    assert_equal 80, library.fetch_track(10973).rating
+  end
+
   def test_track_play_count
     assert_equal 0, library.fetch_track(7944).play_count
   end

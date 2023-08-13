@@ -64,6 +64,10 @@ module ITunes
     def last_played_at
       self['Play Date UTC']
     end
+
+    def rating
+      self['Rating']
+    end
     
     def play_count
       self['Play Count'] || 0
