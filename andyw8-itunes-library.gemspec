@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name      = 'andyw8-itunes-library'
-  s.version   = '0.1.3'
+  s.version   = '0.1.4'
 
   s.homepage    = "https://github.com/andyw8/itunes-library"
   s.summary     = "Wrapper around iTunes Library.xml"
