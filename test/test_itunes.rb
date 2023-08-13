@@ -97,7 +97,7 @@ class TestITunes < Test::Unit::TestCase
   def test_track_date_added
     assert_equal "2010-04-24T13:24:25+00:00", library.fetch_track(7944).date_added.to_s
   end
-  
+
   def test_track_location
     expected_location = 'file://localhost/iTunes/iTunes%20Media/Music/Coldplay/Viva%20la%20Vida/10%20Death%20and%20All%20His%20Friends.mp3'
     assert_equal expected_location, library.fetch_track(7405).location
@@ -119,7 +119,7 @@ class TestITunes < Test::Unit::TestCase
   def test_sample_rate
     assert_equal 44100, library.fetch_track(7949).sample_rate
   end
-  
+
   def test_artwork_count
     assert_equal 1, library.fetch_track(7949).artwork_count
   end
@@ -209,7 +209,7 @@ class TestITunes < Test::Unit::TestCase
     assert_equal false, library.fetch_track(11075).played?
     assert_equal true, library.fetch_track(11068).played?
   end
-  
+
   def test_tv_show_season_number
     assert_equal 1, library.fetch_track(11082).season_number
   end

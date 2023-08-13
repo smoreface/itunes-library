@@ -16,8 +16,11 @@ Gem::Specification.new do |s|
     'README.md'
   ]
 
-  s.add_dependency 'plist'
-  s.add_development_dependency 'rake'
+  s.required_ruby_version = '>= 3.0.0'
+
+  s.add_dependency 'plist', ">= 3.7.0"
+  s.add_development_dependency 'rake', ">= 13.0.6"
+  s.add_development_dependency 'test-unit', ">= 3.5.3"
 
   s.authors = ["Joshua Peek"]
   s.email   = ["josh@joshpeek.com"]
