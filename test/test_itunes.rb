@@ -73,6 +73,10 @@ class TestITunes < Test::Unit::TestCase
     assert_equal "Rock", library.fetch_track(7944).genre
   end
 
+  def test_bpm
+    assert_equal "192", library.fetch_track(11083).bpm
+  end
+
   def test_track_year
     assert_equal 2009, library.fetch_track(7944).year
   end
@@ -110,6 +114,10 @@ class TestITunes < Test::Unit::TestCase
     assert_equal 0, library.fetch_track(7944).play_count
   end
 
+  def test_track_skip_count
+    assert_equal 3, library.fetch_track(11084).skip_count
+  end
+
   def test_track_unplayed
     assert_equal true, library.fetch_track(7944).unplayed?
   end
@@ -128,6 +136,10 @@ class TestITunes < Test::Unit::TestCase
     assert_equal expected_path, library.fetch_track(7405).location_path
   end
 
+  def test_track_comments
+    assert_equal "Sub Pop", library.fetch_track(11084).comments
+  end
+
   def test_track_location_path_is_nil_if_location_not_present
     assert_nil library.fetch_track(7400).location_path
   end
@@ -142,6 +154,10 @@ class TestITunes < Test::Unit::TestCase
 
   def test_artwork_count
     assert_equal 1, library.fetch_track(7949).artwork_count
+  end
+
+  def test_duration_ms
+    assert_equal 246909, library.fetch_track(7944).duration_ms
   end
 
   def test_audio_track_total_time
