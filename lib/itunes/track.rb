@@ -89,6 +89,10 @@ module ITunes
       self['Play Count'] || 0
     end
 
+    def skip_count
+      self['Skip Count'] || 0
+    end
+
     def total_time
       self['Total Time'] / 1000
     end
