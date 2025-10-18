@@ -126,6 +126,10 @@ module ITunes
       uri_parser.unescape(location).gsub('file://localhost', '')
     end
 
+    def comments
+      self['Comments']
+    end
+
     def audio?
       !video?
     end
