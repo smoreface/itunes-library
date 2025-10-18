@@ -89,6 +89,10 @@ module ITunes
       self['Total Time'] / 1000
     end
 
+    def duration_ms
+      self['Total Time'] ? self['Total Time'] : nil
+    end
+
     def kind
       self['Kind']
     end
