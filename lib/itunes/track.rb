@@ -94,7 +94,7 @@ module ITunes
     end
 
     def total_time
-      self['Total Time'] / 1000 
+      self['Total Time'] ? self['Total Time'] / 1000 : nil
     end
 
     def duration_ms
