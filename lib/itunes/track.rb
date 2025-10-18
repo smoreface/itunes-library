@@ -85,8 +85,8 @@ module ITunes
       self['Skip Count'] || 0
     end
 
-    def total_time
-      self['Total Time'] / 1000
+    def duration_sec
+      self['Total Time'] ? self['Total Time'] / 1000 : nil
     end
 
     def duration_ms
