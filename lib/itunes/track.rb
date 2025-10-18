@@ -41,6 +41,10 @@ module ITunes
       self['Genre']
     end
 
+    def bpm
+      self['BPM']
+    end
+
     def year
       self['Year']
     end
@@ -85,8 +89,16 @@ module ITunes
       self['Play Count'] || 0
     end
 
+    def skip_count
+      self['Skip Count'] || 0
+    end
+
     def total_time
-      self['Total Time'] / 1000
+      self['Total Time'] ? self['Total Time'] / 1000 : nil
+    end
+
+    def duration_ms
+      self['Total Time'] ? self['Total Time'] : nil
     end
 
     def kind
@@ -112,6 +124,10 @@ module ITunes
     def location_path
       return nil unless location
       uri_parser.unescape(location).gsub('file://localhost', '')
+    end
+
+    def comments
+      self['Comments']
     end
 
     def audio?
