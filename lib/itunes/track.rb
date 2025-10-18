@@ -41,20 +41,16 @@ module ITunes
       self['Genre']
     end
 
+    def bpm
+      self['BPM']
+    end
+
     def year
       self['Year']
     end
 
     def composer
       self['Composer']
-    end
-
-    def season_number
-      self['Season']
-    end
-
-    def episode_number
-      self['Episode Order']
     end
 
     def date_added
@@ -85,6 +81,10 @@ module ITunes
       self['Play Count'] || 0
     end
 
+    def skip_count
+      self['Skip Count'] || 0
+    end
+
     def total_time
       self['Total Time'] / 1000
     end
@@ -103,6 +103,10 @@ module ITunes
     
     def artwork_count
       self['Artwork Count']
+    end
+
+    def comment
+      self['Comments']
     end
 
     def location
