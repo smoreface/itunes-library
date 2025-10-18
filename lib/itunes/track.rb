@@ -53,14 +53,6 @@ module ITunes
       self['Composer']
     end
 
-    def season_number
-      self['Season']
-    end
-
-    def episode_number
-      self['Episode Order']
-    end
-
     def date_added
       self['Date Added']
     end
