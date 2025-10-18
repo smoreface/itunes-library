@@ -41,6 +41,10 @@ module ITunes
       self['Genre']
     end
 
+    def bpm
+      self['BPM']
+    end
+
     def year
       self['Year']
     end
